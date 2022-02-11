@@ -21,8 +21,8 @@ Built Qr code, with few changes in HTML5 and CSS3. Body is centered. This projec
 ### Screenshot
 
 ![mobile](design/mobile-ss.jpg)
-![local](design/ss.jpg)
-![site](design/ss-desktop.jpg)
+![local](design/ss.png)
+![site](design/ss-desktop.png)
 
 ### Links
 
