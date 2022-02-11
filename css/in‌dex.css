@@ -67,4 +67,9 @@ body {
   width: 100%;
 }
 
+@media (max-width: 400px) {
+  .wrapper, .attribution {
+    width: 375px;
 
+  }
+}
