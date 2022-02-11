@@ -1,4 +1,4 @@
-@import url("https://fonts.google.com/specimen/Outfit");
+@import url("https://fonts.google.com/specimen/Outfit:wght@400;700&display=swap");
 :root {
   --white: hsl(0, 0%, 100%);
   --light-gray: hsl(212, 45%, 89%);
@@ -25,7 +25,7 @@ body {
 }
 
 .shape {
-  margin-top: 2rem;
+  
   border: 1px solid #ffffff;
   width: 50%;
   margin: auto;
@@ -68,7 +68,7 @@ body {
 }
 
 @media (max-width: 400px) {
-  .wrapper,
+  .container,
   .attribution {
     width: 375px;
   }
