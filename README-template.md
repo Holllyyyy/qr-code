@@ -1,6 +1,6 @@
 # Frontend Mentor - QR code component solution
 
-This is a solution to the [QR code component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [QR code component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -11,93 +11,137 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
+
+Built Qr code, with few changes in HTML5 and CSS3. Body is centered. This project is so good to practice postioning of content on your page.
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![mobile](./mobile-ss.jpg)
+![local](./ss.jpg)
+![site](./ss-desktop.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [from gitHub](https://github.com/Holllyyyy/qr-code)
+- Live Site URL: [from netlify](https://qr-code-project-by-holy.netlify.app/)
 
 ## My process
+
+I started with writing basic HTML where I just added couple of divs. After it I moved on my style. I make css folder, and wrote basic css.
+I started with this:
+
+```css
+@import url("https://fonts.google.com/specimen/Outfit");
+/*So I can use this font for my project in my css file.*/
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(212, 45%, 89%);
+  --grayish-blue: hsl(220, 15%, 55%);
+  --dark-blue: hsl(218, 44%, 22%);
+} /* Here I used :root and give name to colors required for this project,so afterwards I used just that names   */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+} /* basic things for all*/
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Outfit", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--light-gray);
+} /* width and min-height are basic what we always need to write,font-family from import, and some others if on some browser someone opened where is not accepted this one, theres some alternatives, display flex n other parts of flex is to make body to be centered and elements inside it, use of background-color with var what i already named it earlier*/
+
+.shape {
+  margin-top: 2rem;
+  border: 1px solid #ffffff;
+  width: 50%;
+  margin: auto;
+  background-color: var(--white);
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -o-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  padding: 15px;
+} /*just some basic for centered .shape , colors and other stuff and border radius with browser prefixes how would it be accessible n visible on other browsers as well*/
+.pic-code {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -o-border-radius: 15px;
+  -webkit-border-radius: 15px;
+} /* some basic rule for image, and also border radius*/
+.shape > h2 {
+  color: var(--dark-blue);
+  margin-top: 8px;
+  font-weight: 700;
+  padding: 12px;
+  text-align: center;
+  font-size: 20px;
+} /* this is part of h2 , where I just move with margin top n separated from picture, a little bit padding and make text to be centered*/
+.shape > p {
+  color: var(--grayish-blue);
+  font-weight: 400;
+  padding: 12px;
+  text-align: center;
+  font-size: 15px;
+} /*same here, just this is paragraph, with diffrent font size and font weight*/
+
+.attribution {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+} /* I've chosen this method, to make it be fixed bottom, with width of 100%, text is aligned on center, in HTML  */
+
+@media (max-width: 400px) {
+  .wrapper,
+  .attribution {
+    width: 375px;
+  }
+  .attribution {
+    text-align: center;
+  }
+}
+/* here i put this 2 together gave max-width of 400 px for this two divs width of 375px */
+```
 
 ### Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+While working on this project I learned more about positioning and how to use with more confidence flexbox. And I learned how much is important to choose good font-weight, size and family as well... They're making website prettier, than when is without it.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+I will continue next with profile card project, from Frontend Mentor. I want to practice and improve my HTML and CSS skills.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Website - [Svetlana Jokic](https://qr-code-project-by-holy.netlify.app/)
+- Frontend Mentor - [@Holllyyyy](https://www.frontendmentor.io/profile/Holllyyyy)
+- Twitter - [@svetlanajokic](https://twitter.com/svetlanajokic)
+  -LinkedIn - [@Svetlana Jokic](https://www.linkedin.com/in/svetlana-jokic-787432100/)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Thanks to my team:
+[@mybebe1](https://github.com/Mybebe1)
+[@aemrobe](https://github.com/aemrobe)
+[@bertyruan](https://github.com/bertyruan)
+It's been great experience to work with team,to help to each other by giving tips and feedbacks.

@@ -68,8 +68,11 @@ body {
 }
 
 @media (max-width: 400px) {
-  .wrapper, .attribution {
+  .wrapper,
+  .attribution {
     width: 375px;
-
+  }
+  .attribution {
+    text-align: center;
   }
 }
