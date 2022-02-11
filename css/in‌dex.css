@@ -34,6 +34,7 @@ body {
   -moz-border-radius: 15px;
   -o-border-radius: 15px;
   -webkit-border-radius: 15px;
+  box-shadow: 4px 4px 4px rgb(149, 149, 236);
   padding: 15px;
 }
 .pic-code {
@@ -45,7 +46,7 @@ body {
   -o-border-radius: 15px;
   -webkit-border-radius: 15px;
 }
-.shape > h2 {
+.shape > h1 {
   color: var(--dark-blue);
   margin-top: 8px;
   font-weight: 700;
