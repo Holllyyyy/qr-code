@@ -1,87 +1,147 @@
-# Frontend Mentor - QR code component
+# Frontend Mentor - QR code component solution
 
-![Design preview for the QR code component coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [QR code component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+Built Qr code, with few changes in HTML5 and CSS3. Body is centered. This project is so good to practice postioning of content on your page.
 
-## The challenge
+### Screenshot
 
-Your challenge is to build out this QR code component and get it looking as close to the design as possible.
+![mobile](design/mobile-ss.jpg)
+![local](design/ss.png)
+![site](design/ss-desktop.png)
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+### Links
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+- Solution URL: [from gitHub](https://github.com/Holllyyyy/qr-code)
+- Live Site URL: [from netlify](https://qr-code-project-by-holy.netlify.app/)
 
-## Where to find everything
+## My process
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+I started with writing basic HTML where I just added couple of divs. After it I moved on my style. I make css folder, and wrote basic css.
+I started with this:
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+```css
+@import url("https://fonts.google.com/specimen/Outfit");
+/*So I can use this font for my project in my css file.*/
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(212, 45%, 89%);
+  --grayish-blue: hsl(220, 15%, 55%);
+  --dark-blue: hsl(218, 44%, 22%);
+} /* Here I used :root and give name to colors required for this project,so afterwards I used just that names   */
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+} /* basic things for all*/
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Outfit", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--light-gray);
+} /* width and min-height are basic what we always need to write,font-family from import, and some others if on some browser someone opened where is not accepted this one, theres some alternatives, display flex n other parts of flex is to make body to be centered and elements inside it, use of background-color with var what i already named it earlier*/
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+.shape {
+  margin-top: 2rem;
+  border: 1px solid #ffffff;
+  width: 50%;
+  margin: auto;
+  background-color: var(--white);
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -o-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  padding: 15px;
+} /*just some basic for centered .shape , colors and other stuff and border radius with browser prefixes how would it be accessible n visible on other browsers as well*/
+.pic-code {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -o-border-radius: 15px;
+  -webkit-border-radius: 15px;
+} /* some basic rule for image, and also border radius*/
+.shape > h2 {
+  color: var(--dark-blue);
+  margin-top: 8px;
+  font-weight: 700;
+  padding: 12px;
+  text-align: center;
+  font-size: 20px;
+} /* this is part of h2 , where I just move with margin top n separated from picture, a little bit padding and make text to be centered*/
+.shape > p {
+  color: var(--grayish-blue);
+  font-weight: 400;
+  padding: 12px;
+  text-align: center;
+  font-size: 15px;
+} /*same here, just this is paragraph, with diffrent font size and font weight*/
 
-## Building your project
+.attribution {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+} /* I've chosen this method, to make it be fixed bottom, with width of 100%, text is aligned on center, in HTML  */
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+@media (max-width: 400px) {
+  .wrapper,
+  .attribution {
+    width: 375px;
+  }
+  .attribution {
+    text-align: center;
+  }
+}
+/* here i put this 2 together gave max-width of 400 px for this two divs width of 375px */
+```
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+### Built with
 
-## Deploying your project
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+### What I learned
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+While working on this project I learned more about positioning and how to use with more confidence flexbox. And I learned how much is important to choose good font-weight, size and family as well... They're making website prettier, than when is without it.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+### Continued development
 
-## Create a custom `README.md`
+I will continue next with profile card project, from Frontend Mentor. I want to practice and improve my HTML and CSS skills.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+## Author
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+- Website - [Svetlana Jokic](https://my-portfolio-hollyy.netlify.app/)
+- Frontend Mentor - [@Holllyyyy](https://www.frontendmentor.io/profile/Holllyyyy)
+- Twitter - [@svetlanajokic](https://twitter.com/svetlanajokic)
+  -LinkedIn - [@Svetlana Jokic](https://www.linkedin.com/in/svetlana-jokic-787432100/)
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+## Acknowledgments
 
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+Thanks to my team:
+[@mybebe1](https://github.com/Mybebe1)
+[@aemrobe](https://github.com/aemrobe)
+[@bertyruan](https://github.com/bertyruan)
+It's been great experience to work with team,to help to each other by giving tips and feedbacks.
